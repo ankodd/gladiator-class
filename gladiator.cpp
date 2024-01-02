@@ -8,10 +8,7 @@ public:
     int health;
     int armor;
 
-    Gladiator(int d, int h) {
-        damage = rand() % d + (d / 2);
-        health = h;
-    }
+    Gladiator(int d, int h) : damage(rand() % d + (d / 2)), health(h){};
 
     void attack(Gladiator& opponent) {
         opponent.health -= damage;
