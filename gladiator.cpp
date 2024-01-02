@@ -15,7 +15,7 @@ public:
 
     void attack(Gladiator& opponent) {
         opponent.health -= damage;
-    }
+    } //Наносит врагу урон
 };
 
 int get_winner(const Gladiator& gladiator1, const Gladiator& gladiator2) {
@@ -25,7 +25,7 @@ int get_winner(const Gladiator& gladiator1, const Gladiator& gladiator2) {
         return 2;
     else
         return 0;
-}
+} /*Возвращает победившего гладиатора*/
 
 int main() {
     srand(time(nullptr));
@@ -50,11 +50,9 @@ int main() {
             " Здоровья у первого гладиатора. Осталось: " << first_gladiator.health << std::endl;
     }
 
-    int winner = get_winner(first_gladiator, second_gladiator);
-
-    if (winner == 1)
+    if (get_winner(first_gladiator, second_gladiator) == 1)
         std::cout << "\t\tПобеду одержал первый гладиатор!!";
-    else if (winner == 2)
+    else if (get_winner(first_gladiator, second_gladiator) == 2)
         std::cout << "\t\tПобеду одержал второй гладиатор!!";
     else
         std::cout << "\t\tНичья!";
