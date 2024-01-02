@@ -27,12 +27,12 @@ int get_winner(const Gladiator& gladiator1, const Gladiator& gladiator2) {
 int main() {
     srand(time(nullptr));
 
-    const int max_damage = 45;
-    const int max_health = 250;
-    const int min_damage = max_damage / 2;
+    const int MAXDAMAGE = 45;
+    const int MAXHEALTH = 250;
+    const int MINDAMAGE = MAXDAMAGE / 2;
 
-    Gladiator first_gladiator(max_damage, max_health);
-    Gladiator second_gladiator(max_damage, max_health);
+    Gladiator first_gladiator(MAXDAMAGE, MAXHEALTH);
+    Gladiator second_gladiator(MAXDAMAGE, MAXHEALTH);
 
     while (first_gladiator.health > 0 && second_gladiator.health > 0) {
         first_gladiator.attack(second_gladiator);
